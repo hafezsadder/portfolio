@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6e8efb, #a777e3); /* Modern gradient background */
+    color: #fff; /* Ensured contrast for readability */
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif; /* Modern and readable font */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Enhanced shadow for depth */
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Smooth logo animation */
+  }
+  
+  .logo:hover, .logo:focus {
+    transform: scale(1.05); /* Slight enlargement on hover/focus */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Aligns links vertically center */
+  }
+  
+  .nav-links li {
+    padding: 0 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease; /* Smooth transition for color and background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative; /* Setup for the pseudo-element */
+  }
+  
+  .nav-links a:hover, .nav-links a:focus {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2); /* More visible background highlight */
+    text-decoration: none; /* Ensures text decoration is removed on hover/focus */
+  }
+  
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Animated underline color */
+    transition: width 0.3s;
+  }
+  
+  .nav-links a:hover::before, .nav-links a:focus::before {
+    width: 100%; /* Full width on hover/focus */
+  }
+  
