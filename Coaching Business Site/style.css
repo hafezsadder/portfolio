@@ -44,7 +44,13 @@ body {
 .navbar-links a:hover::after {
   width: 70%; /* Updated width on hover */
   left: 15%; /* Adjusted to keep the line centered */
-}.burger {
+}
+.burger, .navbar-links {
+  z-index: 1000; /* Ensure a high z-index to be on top of other content */
+}
+
+/* Your existing burger styles */
+.burger {
   display: none;
   cursor: pointer;
 }
@@ -57,29 +63,6 @@ body {
   transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  .burger {
-    display: block;
-  }
-
-  .navbar-links {
-    position: absolute;
-    right: 0;
-    height: 100vh;
-    top: 60px; /* Adjust based on your navbar's height */
-    background-color: #004175;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-  }
-
-  .navbar-links.active {
-    transform: translateX(0);
-  }
-}
 .hero-content {
   max-width: 50%; /* Adjusted for better use of space and readability */
   color: #004175; /* Consistent with the button design for a cohesive look */
@@ -315,17 +298,6 @@ body {
   color: #666; /* Darker text for readability */
 }
 
-@media (max-width: 768px) {
-  .credentials {
-    flex-direction: column;
-  }
-
-  .credential-item {
-    flex-basis: 100%; /* Stack items on smaller screens */
-    margin-bottom: 20px;
-  }
-}
-
 .about-us {
   text-align: center;
   margin: 50px 0;
@@ -360,25 +332,9 @@ background-color: #004175;
   font-size: 1em;
   line-height: 1.6;
   color: #666; /* Dark grey for readability */
-  text-align: justify; /* Optional: if you decide to fully justify the text */
+  text-align: justify; 
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image {
-    max-width: 80%;
-    margin-bottom: 20px;
-  }
-
-  .about-text {
-    max-width: 100%;
-  }
-}
 .contact-us {
   padding: 60px 20px; /* Ample padding for spacious layout */
   text-align: center;
@@ -494,15 +450,194 @@ background-color: #004175;
 }
 
 @media (max-width: 768px) {
-  .footer-content {
+  .burger {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 60px; /* Adjust based on your navbar's height */
+    background-color: #004175;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+  }  
+  .hero-section {
+    flex-direction: column; /* Stack content vertically */
+    padding: 50px 20px; /* Reduce padding for smaller screens */
+    transition: padding 0.3s ease-in-out; /* Smooth transition for padding adjustment */
+  }
+  
+  .hero-content, .hero-image {
+    max-width: 100%; /* Allow content and image to fill the width */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for content and image */
+  }
+  
+  .hero-content {
+    text-align: center; /* Center content for a more focused presentation */
+    padding: 0 10px; /* Adjust padding for content */
+    opacity: 0;
+    transform: translateY(10px); /* Initial state for animation */
+    animation: fadeInUp 0.5s ease-out forwards; /* Animation to fade in and move up */
+  }
+  
+  .hero-content h1, .hero-content p {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards; /* Individual elements fade in for added effect */
+    animation-delay: 0.3s; /* Delay animation for sequence */
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8em; /* Smaller font size for headlines */
+  }
+  
+  .hero-content p {
+    font-size: 1em; /* Adjust paragraph font size for readability */
+    margin-bottom: 20px; /* Ensures consistent spacing */
+    animation-delay: 0.5s; /* Slightly later animation start */
+  }
+
+  .hero-image img {
+    width: 100%; /* Ensure image scales down */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Fix any display issues */
+    margin: 20px 0; /* Add some space between the content and the image */
+    opacity: 0;
+    transform: scale(0.95); /* Start slightly scaled down for animation */
+    animation: scaleInSmooth 0.8s ease-out forwards; /* Extended duration and smooth scaling */
+    animation-delay: 0.7s; /* Delay for sequential appearance */
+  }
+
+  .hero-btn {
+    padding: 10px 20px; /* Adjust button size for easier clicking */
+    animation: fadeIn 0.3s ease-out forwards; /* Fade-in animation for the button */
+    animation-delay: 0.9s; /* Button appears last */
+  }
+
+  .features-section {
+    flex-direction: column; /* Stack feature cards vertically */
+    align-items: center; /* Center the cards */
+  }
+
+  .feature-card {
+    width: 80%; /* Adjust the width to take more space */
+    margin: 10px 0; /* Increase margin for vertical stacking */
+  }
+
+  .feature-card .icon {
+    font-size: 30px; /* Slightly reduce the icon size */
+  }
+
+  .company-logo {
+    width: 40px; /* Slightly reduce the logo size */
+  }  
+
+  .service, .service-reverse {
+    flex-direction: column; /* Stack the image and text vertically */
+    margin: 30px 0; /* Reduce margin for smaller screens */
+  }
+
+  .service-img, .service-img-reverse, .service-text, .service-text-reverse {
+    width: 80%; /* Allow both image and text to fill more space */
+    max-width: none; /* Remove max-width restrictions */
+    padding: 0 10px; /* Add some padding for spacing */
+    margin: 0 auto; /* Center the content */
+  }
+
+  .service-text, .service-text-reverse {
+    max-width: 100%; /* Allow text blocks to use the full width */
+  }
+
+  .services-title {
+    font-size: 1.5em; /* Adjust title size for smaller screens */
+  }
+
+  .services-section h3 {
+    font-size: 1.5em; /* Adjust heading size for smaller screens */
+  }
+
+  .services-section p {
+    font-size: 1em; /* Adjust paragraph size for smaller screens */
+  }
+  .credentials {
     flex-direction: column;
   }
 
-  .footer-left, .footer-center, .footer-right {
-    margin-bottom: 10px; /* Add space between sections on smaller screens */
+  .credential-item {
+    flex-basis: 100%; /* Stack items on smaller screens */
+    margin-bottom: 20px;
   }
 
+  .about-content {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center-align the items for a balanced look */
+    text-align: center; /* Center text for consistency */
+  }
+
+  .about-image {
+    max-width: 80%; /* Increase max-width for better use of space */
+    margin-right: 0; /* Remove the margin-right as it's no longer side-by-side */
+    margin-bottom: 20px; /* Add space between the image and the text */
+  }
+
+  .about-text {
+    max-width: 90%; /* Adjust max-width for the text block */
+  }
+
+  .about-us h2, .about-text h3 {
+    text-align: center; /* Center-align headings for consistency */
+  }
+
+  .about-text p {
+    text-align: justify;
+  }
+  .footer-content {
+    flex-direction: column; /* Stack elements vertically */
+  }
   .social-media-links a {
-    font-size: 1.2em; /* Slightly reduce icon size for smaller screens */
+    font-size: 1.2em; /* Adjust icon size for smaller screens */
+  }
+}
+
+/* Keyframes for animations of hero section*/
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleInSmooth {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
