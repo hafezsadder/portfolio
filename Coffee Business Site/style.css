@@ -458,9 +458,31 @@ h3 {
     .nav-links li {
         padding: 10px 0;
     }
+    .hero {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: stretch; /* Stretch children to match the parent's width */
+      }
+
+    .hero-image {
+    width: 100%; /* Full width images on smaller screens */
+    }
+
+    .hero-content {
+    width: 100%; /* Use full container width for text content */
+    padding: 15px; /* Adjust padding */
+    }
+
+    .hero-header {
+    font-size: 2em; /* Slightly smaller text on smaller screens */
+    }
+
+    .hero-subheader {
+    font-size: 1.2em; /* Adjust subheader font size for smaller screens */
+    }
+
     .hero-btn {
-        padding: 10px 20px; /* Adjust padding */
-        font-size: 16px; /* Adjust font size */
+    padding: 10px 25px; /* Adjust button padding for smaller screens */
+    font-size: 16px; /* Slightly smaller font size for the button */
     }
     .features {
         flex-direction: column;
@@ -538,30 +560,17 @@ h3 {
     }
 }
 
-/* Further adjustments for very small screens */
 @media (max-width: 480px) {
-    .hero-header {
-        font-size: 25px;
-        color: #333;
-        margin-bottom: 0.1em;
-      }
-    
-      .hero-subheader {
-        font-size: 15px;
-        color: #777;
-        margin-bottom: 10px;
-      }
-    .hero-content{
-      width: 30%;
-    }
-    .hero-image {
-      width: 60%;
-    }
-    .hero-btn {
-        padding: 8px 18px; /* Slightly smaller padding */
-        font-size: 14px; /* Smaller font size for very small screens */
-        border-radius: 40px; /* Adjust border-radius for smaller buttons */
-        right: 7%;
-        bottom: 25%;
-    }
+  .hero-header {
+    font-size: 1.5em; /* Even smaller text for very small screens */
+  }
+
+  .hero-subheader {
+    font-size: 1em; /* Adjust subheader font size for very small screens */
+  }
+
+  .hero-btn {
+    padding: 8px 20px; /* Further adjust button padding for very small screens */
+    font-size: 14px; /* Further reduce font size for the button */
+  }
 }
