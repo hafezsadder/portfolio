@@ -1,0 +1,581 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-text-color);
+    padding: 10px 20px;
+    font-family: 'Open Sans', sans-serif;
+    /* Enhanced shadow for clear distinction */
+    box-shadow: 0 15px 30px -5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+}
+
+
+.logo {
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo:hover, .logo:focus {
+    transform: scale(1.05); /* Slight zoom on hover/focus for feedback */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--navbar-text-color);
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover, .nav-links a:focus , .footer-links a:hover{
+    opacity: 85%;
+    background-color: var(--navbar-hover-background-color);
+    transform: translateY(-2px); /* Raises the link slightly for depth */
+}
+
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+
+  .hero-image {
+    width: 55%;
+    height: 100%;
+  }
+
+  .hero-content {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-header {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  .hero-subheader {
+    font-size: 1.5em;
+    color: #777;
+    margin-bottom: 1em;
+    margin-top: 0px;
+  }
+
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 30px; /* Ample padding for a larger, more clickable area */
+    font-weight: bold; /* Makes the text stand out */
+    border-radius: 50px; /* Rounded corners for a modern, pill-like shape */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    font-size: 18px; /* Larger font size for readability and emphasis */
+    background-color: #6B4E31; /* Earthy tone, consistent with your theme */
+    color: white;   
+    text-align: center;
+}
+
+.hero-btn:hover, .hero-btn:focus {
+    background-color: #fabd05; /* Slightly lighter shade on hover/focus for interaction feedback */
+    color: #222; /* Slightly darker color for text on hover/focus */
+    box-shadow: 0 6px 8px rgba(0,0,0,0.3); /* Enhanced shadow for a "lifting" effect */
+    transform: translateY(-2px); /* Slightly raise the button to imply interactivity */
+    background-color: transparent;
+    color: #6B4E31; /* Switch color scheme on hover/focus */
+    border-color: #6B4E31; /* Highlight with a border */
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5; /* Light background to distinguish the section */
+}
+
+.feature-card {
+    width: 30%; /* Adjust based on your preference */
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Soften the edges */
+}
+
+.feature-icon {
+    font-size: 2em; /* Adjusts the size of the icon */
+    margin-bottom: 20px; /* Keeps space between the icon and the text below */
+    color: #333; /* Example color, adjust as needed */
+}
+
+
+.feature-card h3 {
+    margin: 10px 0;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Slightly raise the card on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhance shadow for lifted effect */
+}
+
+.feature-btn {
+    text-decoration: none;
+    color: #6B4E31; /* Matching the coffee theme */
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    border: 1px solid #6B4E31; /* Solid border using the coffee color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.feature-btn:hover {
+    background-color: #6B4E31;
+    color: white;
+}
+.value-added-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.spec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.spec:last-child {
+    margin-bottom: 0;
+}
+
+.spec-details, .spec-image {
+    flex-basis: 48%;
+}
+
+.spec-details {
+    text-align: left;
+}
+
+.spec-image img {
+    width: 100%; /* Ensures the image is fully contained within its div */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 300px; /* Set a max-height to ensure images are the same size */
+    object-fit: cover; /* Ensures the image covers the area, can be adjusted */
+    border-radius: 8px;
+}
+
+/* Specific to the first spec to start image on the right */
+.spec:first-child {
+    flex-direction: row-reverse;
+}
+
+.spec-reverse {
+    flex-direction: row-reverse;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700; /* Adjust based on the font */
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.spec-details p {
+    font-size: 16px; /* Consider slightly larger for readability */
+    line-height: 1.6;
+}
+.social-proof {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5; /* Light background to distinguish the section */
+}
+
+.social-proof h2 {
+    font-family: 'Merriweather', serif;
+    margin-bottom: 30px;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Creates space between review boxes */
+}
+
+.review {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    max-width: 300px; /* Ensures consistency in review box sizes */
+}
+
+.review p:first-of-type {
+    font-style: italic;
+}
+
+.review h4 {
+    margin-top: 20px;
+    font-family: 'Merriweather', serif;
+}
+
+.review p:last-child {
+    color: #777;
+    font-size: 14px;
+}
+
+.contact-us {
+    padding: 60px 20px; /* Ample padding for spacious layout */
+    text-align: center;
+    background-color: #FAFAFA; /* Soft background for the whole section */
+}
+
+.contact-us h2 {
+    font-size: 28px; /* Slightly larger for emphasis */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-intro {
+    max-width: 800px; /* Ensures the text is comfortably readable */
+    margin: 0 auto 40px;
+    color: #666;
+    font-size: 16px;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: auto;
+}
+
+.form-field {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    box-sizing: border-box; /* Ensures padding does not affect overall width */
+    font-size: 14px;
+}
+
+.form-field textarea {
+    min-height: 120px; /* Provides ample space for message input */
+}
+
+.contact-submit {
+    width: auto; /* Adapts to content size */
+    padding: 12px 24px;
+    background-color: #6B4E31; /* Earthy tone, consistent with your theme */
+    color: white;
+    border: 2px solid transparent; /* Solid border for emphasis, hidden by default */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif; /* Consistency with the body font */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact-submit:hover, .contact-submit:focus {
+    background-color: transparent;
+    color: #6B4E31; /* Switch color scheme on hover/focus */
+    border-color: #6B4E31; /* Highlight with a border */
+}
+
+.faqs-section {
+    background-color: #FAFAFA; /* Light background for contrast */
+    padding: 40px 20px;
+    text-align: center; /* Center-align the section title */
+}
+
+.faqs-section .container {
+    max-width: 800px;
+    margin: auto;
+    text-align: left; /* Aligns FAQ text to the left for readability */
+}
+
+.faqs-section h2 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #FFFFFF; /* White background for FAQ items */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+.faq-question {
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer; /* Indicates interactivity */
+    transition: background-color 0.3s ease;
+}
+
+.faq-answer {
+    margin: 0;
+    padding: 0 10px 10px 10px;
+    display: none; /* Hide answers by default */
+}
+
+.faq-question:hover, .faq-question:focus {
+    background-color: #f0f0f0; /* Slight background change on hover/focus */
+}
+.site-footer {
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-text-color);
+    padding: 40px 0;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 15px 30px -5px rgba(0,0,0,0.5);
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.footer-section {
+    margin: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: var(--navbar-text-color);
+
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li a {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon {
+    /* color: #ddd; */
+    color: var(--navbar-text-color);
+
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444; /* Subtle visual separation */
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+    .hero {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: stretch; /* Stretch children to match the parent's width */
+      }
+
+    .hero-image {
+    width: 100%; /* Full width images on smaller screens */
+    }
+
+    .hero-content {
+    width: 100%; /* Use full container width for text content */
+    padding: 15px; /* Adjust padding */
+    }
+
+    .hero-header {
+    font-size: 2em; /* Slightly smaller text on smaller screens */
+    }
+
+    .hero-subheader {
+    font-size: 1.2em; /* Adjust subheader font size for smaller screens */
+    }
+
+    .hero-btn {
+    padding: 10px 25px; /* Adjust button padding for smaller screens */
+    font-size: 16px; /* Slightly smaller font size for the button */
+    }
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 80%; /* Adjusts card width to better fit smaller screens */
+        /* Ensure the width doesn't get too small on very small screens */
+        min-width: 280px;
+    }
+
+    .feature-btn {
+        width: auto; /* Adjust button width as per content */
+    }
+
+    .spec, .spec-reverse {
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+    }
+    .top-spec {
+        display: block;
+    }
+
+    .spec-details, .spec-image {
+        flex-basis: auto; /* Resets the flex basis */
+        padding: 0; /* Removes padding for full-width alignment */
+    }
+
+    .spec-reverse .spec-details {
+        order: -1; /* Moves text above the image in .spec-reverse elements */
+    }
+    .spec img {
+        height: 250px;
+        width: 350px;
+
+    }
+    .target {
+        position: relative;
+        right: -28px;
+    }
+    .reviews {
+        flex-direction: column;
+        gap: 10px;
+        /* justify-content: center; */
+        align-items: center;
+    }
+    .contact-intro, .contact-form {
+        width: 100%; /* Ensures full width utilization on smaller screens */
+        padding: 0 15px; /* Adds some padding for smaller screens */
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensures footer sections take full width */
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer-links li a, .footer-section p, .social-icon {
+        margin: 5px 0; /* Provides consistent spacing */
+    }
+
+    .footer-bottom {
+        width: 100%; /* Ensures the bottom section spans the full width */
+    }
+}
+
+@media (max-width: 480px) {
+  .hero-header {
+    font-size: 1.5em; /* Even smaller text for very small screens */
+  }
+
+  .hero-subheader {
+    font-size: 1em; /* Adjust subheader font size for very small screens */
+  }
+
+  .hero-btn {
+    padding: 8px 20px; /* Further adjust button padding for very small screens */
+    font-size: 14px; /* Further reduce font size for the button */
+  }
+}

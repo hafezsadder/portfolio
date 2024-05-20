@@ -1,0 +1,644 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2; /* Light background to make the section stand out */
+
+}
+
+.navbar a {
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  
+}
+
+.navbar {
+  background-color: #004175;
+  border-bottom: 1px solid #dddddd;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  align-items: center;
+}
+
+.logo img{
+  height:60px;
+  width: 60px;
+}
+
+.navbar-links a {
+  position: relative; /* Required for the positioning of the pseudo-element */
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px; /* Updated thickness of the underline */
+  background-color: white; /* Color of the underline */
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the underline */
+}
+
+.navbar-links a:hover::after {
+  width: 70%; /* Updated width on hover */
+  left: 15%; /* Adjusted to keep the line centered */
+}
+.burger, .navbar-links {
+  z-index: 1000; /* Ensure a high z-index to be on top of other content */
+}
+
+/* Your existing burger styles */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.hero-content {
+  max-width: 50%; /* Adjusted for better use of space and readability */
+  color: #004175; /* Consistent with the button design for a cohesive look */
+  opacity: 0; /* Start invisible for animation */
+  transform: translateX(-30px); /* Reduced initial translation for subtler animation */
+  transition: opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.3s; /* Keeping the transition as is */
+  line-height: 1.6; /* Improved line spacing for better readability */
+  text-align: left; /* Ensures text alignment is consistent and readable */
+  padding: 20px; /* Adds padding for better spacing around the content */
+}
+
+.hero-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.hero-content p {
+  font-size: 1.4em;
+  margin-bottom: 20px; /* Adds space below paragraphs, ensuring consistency with the h1 */
+  color: #666;
+}
+
+.hero-image {
+  opacity: 0; /* Start invisible for animation */
+  transform: scale(0.55); /* Start slightly smaller */
+  transition: opacity 1.8s ease-out 0.2s, transform 0.8s ease-out 0.3s;
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 130px 130px; /* Increased padding for a larger hero section */
+  overflow: hidden; /* Ensures nothing spills outside during scaling */
+  background-color: #b3d9ff; 
+}
+
+.hero-btn {
+  margin-top: 10px; 
+  padding: 12px 24px; /* Slightly larger for better readability and clickability */
+  text-decoration: none;
+  border-radius: 25px; /* More rounded for a modern, pill-like shape */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Added transform to transition for a subtle effect */
+  background-color: #004175; /* Using the navbar color for consistency */
+  border: 2px solid #004175; /* Border matches background for a solid appearance */
+  color: #fff;
+  font-weight: bold; /* Making the text bold for better visibility */
+  cursor: pointer; /* Indicates that the element is clickable */
+  display: inline-block; /* Ensures proper spacing and alignment */
+}
+
+.hero-btn:hover, .hero-btn:focus {
+  background-color: #fff; /* Inverted colors on hover/focus for visual feedback */
+  color: #004175;
+  transform: translateY(-3px); /* Slight upward movement on hover for a dynamic effect */
+  border-color: #fff; /* Ensures the border color transitions smoothly on hover */
+}
+
+.features-section {
+  display: flex;
+  justify-content: space-around; /* Distributes space evenly around each card */
+  flex-wrap: nowrap; /* Prevents the cards from wrapping */
+  padding: 50px 20px;
+  background-color: #f2f2f2; /* Light background for the section */
+}
+
+.feature-card {
+  background-color: #004175; /* Matching the navbar background */
+  color: #fff; /* White text for contrast */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px; /* Adds rounded corners */
+  width: 22%; /* Adjusts width to fit all cards in a single row */
+  margin: 0 1%; /* Provides a small margin between cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space inside the card */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.feature-card .icon {
+  font-size: 36px; /* Icon size */
+  margin-bottom: 20px;
+}
+
+.company-logo {
+  width: 50px; /* Adjust based on your logo's size */
+  height: auto;
+  margin-top: 20px; /* Space above the logo */
+  align-self: center; /* Centers the logo at the bottom of the card */
+}
+
+.feature-card h2, .feature-card p {
+  margin-bottom: 15px; /* Uniform margin for text elements */
+}
+.services-section {
+  text-align: center;
+}
+
+.services-section {
+  color: #004175;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  overflow: hidden;
+}
+
+.service-reverse {
+  flex-direction: row-reverse;
+
+}
+.service-img {
+  height: 500px;
+  max-width:500px;
+}
+.service-img-reverse {
+  height: 500px;
+  max-width:500px;
+}
+.service-img, .service-text {
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Updated to include opacity transition */
+  will-change: transform, opacity; /* Optimizes animations for both properties */
+  opacity: 1; /* Fully visible upon separation */
+
+  width: 50%;
+}
+.service-img-reverse, .service-text-reverse {
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Updated to include opacity transition */
+  will-change: transform, opacity; /* Optimizes animations for both properties */
+  opacity: 1; /* Fully visible upon separation */
+
+  width: 50%;
+}
+
+.service-text, .service-text-reverse {
+  padding: 20px;
+  max-width: 40%;
+}
+
+/* Apply separation and full visibility when the .separated class is added */
+.service.separated .service-img {
+  transform: translateX(20%); /* Image moves right */
+  opacity: 0; /* gets fully invisible */
+
+}
+.service.separated .service-img-reverse {
+  transform: translateX(-20%); /* Image moves left */
+  opacity: 0; /* gets fully invisible */
+
+}
+
+.service.separated .service-text {
+  transform: translateX(-20%); /* Text moves left */
+  opacity: 0; /* gets fully invisible */
+}
+
+.service.separated .service-text-reverse {
+  transform: translateX(20%); /* Text moves right */
+  opacity: 1; /* gets fully invisible */
+}
+.services-title {
+  font-size: 2em; /* Title font size */
+  font-weight: bold; /* Make the title stand out */
+  margin-bottom: 1em; /* Space below the title */
+}
+
+.services-section h3 {
+  font-size: 1.8em; /* Subtitle font size */
+  color: #004175; /* Color matching your theme */
+  margin-bottom: 0.5em; /* Space below the subtitle */
+}
+
+.services-section p {
+  font-size: 1.2em; /* Paragraph font size */
+  line-height: 1.5; /* Improved line spacing for readability */
+  color: #333; /* Darker text color for better contrast */
+}
+
+.book-session-cta {
+  background-color: #004175; /* Match the navbar to maintain theme consistency */
+  color: #ffffff; /* White text for contrast */
+  text-align: center; /* Center the text inside the div */
+  padding: 20px; /* Add some padding for spacing */
+  margin-top: 50px; /* Space from the services section or any content above */
+  font-size: 1.2em; /* Slightly larger font for emphasis */
+}
+
+.book-session-cta a {
+  color: #FFD700; /* Gold color for the link to make it stand out */
+  text-decoration: none; /* Removes underline from the link */
+  font-weight: bold; /* Make the 'Contact us' text bold */
+}
+
+.book-session-cta a:hover {
+  text-decoration: underline; /* Adds underline on hover for visual feedback */
+}
+.social-proof {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f2f2f2; /* Light background to make the section stand out */
+}
+
+.social-proof h2 {
+  color: #004175; /* Theme color for the title */
+  margin-bottom: 30px;
+}
+
+.credentials {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.credential-item {
+  flex-basis: 20%; /* Adjust based on your layout preference */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.credential-item i {
+  font-size: 2em; /* Larger icons for visibility */
+  margin-bottom: 15px;
+  color: #004175; /* Theme color for icons */
+}
+
+.credential-item p {
+  font-size: 1em;
+  color: #666; /* Darker text for readability */
+}
+
+.about-us {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.about-image {
+background-color: #004175;
+  max-width: 50%;
+  height: auto;
+  margin-right: 70px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 600px; /* Limiting text width for more uniform line lengths */
+}
+
+.about-us h2, .about-text h3 {
+  color: #004175; /* Adjust to fit your theme color */
+}
+
+.about-text p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #666; /* Dark grey for readability */
+  text-align: justify; 
+}
+
+.contact-us {
+  padding: 60px 20px; /* Ample padding for spacious layout */
+  text-align: center;
+}
+
+.contact-us h2 {
+  font-size: 28px; /* Slightly larger for emphasis */
+  color: #004175;
+  margin-bottom: 20px;
+}
+
+.contact-intro {
+  max-width: 800px; /* Ensures the text is comfortably readable */
+  margin: 0 auto 40px;
+  color: #666;
+  font-size: 16px;
+}
+
+.contact-form {
+  max-width: 800px;
+  margin: auto;
+}
+
+.form-field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #004175;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #CCC;
+  border-radius: 6px;
+  box-sizing: border-box; /* Ensures padding does not affect overall width */
+  font-size: 14px;
+}
+
+.form-field textarea {
+  min-height: 120px; /* Provides ample space for message input */
+}
+
+.contact-submit {
+  width: auto; /* Adapts to content size */
+  padding: 12px 24px;
+  background-color: #004175; /* Earthy tone, consistent with your theme */
+  color: white;
+  font-weight: bold;
+  border: 2px solid transparent; /* Solid border for emphasis, hidden by default */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif; /* Consistency with the body font */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact-submit:hover, .contact-submit:focus {
+  background-color: transparent;
+  color: #004175; /* Switch color scheme on hover/focus */
+  border-color: #004175; /* Highlight with a border */
+}
+#contact {
+  padding-bottom: 200px;
+}
+.site-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #004175;
+  color: #ffffff;
+  text-align: center;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Limit the maximum width for larger screens */
+  padding: 20px;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  padding: 0 10px; /* Provides internal spacing */
+}
+
+.social-media-links a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 1.4em;
+  transition: color 0.3s;
+}
+
+.social-media-links a:hover {
+  color: #FFD700;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 60px; /* Adjust based on your navbar's height */
+    background-color: #004175;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+  }  
+  .hero-section {
+    flex-direction: column; /* Stack content vertically */
+    padding: 50px 20px; /* Reduce padding for smaller screens */
+    transition: padding 0.3s ease-in-out; /* Smooth transition for padding adjustment */
+  }
+  
+  .hero-content, .hero-image {
+    max-width: 100%; /* Allow content and image to fill the width */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for content and image */
+  }
+  
+  .hero-content {
+    text-align: center; /* Center content for a more focused presentation */
+    padding: 0 10px; /* Adjust padding for content */
+    opacity: 0;
+    transform: translateY(10px); /* Initial state for animation */
+    animation: fadeInUp 0.5s ease-out forwards; /* Animation to fade in and move up */
+  }
+  
+  .hero-content h1, .hero-content p {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards; /* Individual elements fade in for added effect */
+    animation-delay: 0.3s; /* Delay animation for sequence */
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8em; /* Smaller font size for headlines */
+  }
+  
+  .hero-content p {
+    font-size: 1em; /* Adjust paragraph font size for readability */
+    margin-bottom: 20px; /* Ensures consistent spacing */
+    animation-delay: 0.5s; /* Slightly later animation start */
+  }
+
+  .hero-image img {
+    width: 100%; /* Ensure image scales down */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Fix any display issues */
+    margin: 20px 0; /* Add some space between the content and the image */
+    opacity: 0;
+    transform: scale(0.95); /* Start slightly scaled down for animation */
+    animation: scaleInSmooth 0.8s ease-out forwards; /* Extended duration and smooth scaling */
+    animation-delay: 0.7s; /* Delay for sequential appearance */
+  }
+
+  .hero-btn {
+    padding: 10px 20px; /* Adjust button size for easier clicking */
+    animation: fadeIn 0.3s ease-out forwards; /* Fade-in animation for the button */
+    animation-delay: 0.9s; /* Button appears last */
+  }
+
+  .features-section {
+    flex-direction: column; /* Stack feature cards vertically */
+    align-items: center; /* Center the cards */
+  }
+
+  .feature-card {
+    width: 80%; /* Adjust the width to take more space */
+    margin: 10px 0; /* Increase margin for vertical stacking */
+  }
+
+  .feature-card .icon {
+    font-size: 30px; /* Slightly reduce the icon size */
+  }
+
+  .company-logo {
+    width: 40px; /* Slightly reduce the logo size */
+  }  
+
+  .service, .service-reverse {
+    flex-direction: column; /* Stack the image and text vertically */
+    margin: 30px 0; /* Reduce margin for smaller screens */
+  }
+
+  .service-img, .service-img-reverse, .service-text, .service-text-reverse {
+    width: 80%; /* Allow both image and text to fill more space */
+    max-width: none; /* Remove max-width restrictions */
+    padding: 0 10px; /* Add some padding for spacing */
+    margin: 0 auto; /* Center the content */
+  }
+
+  .service-text, .service-text-reverse {
+    max-width: 100%; /* Allow text blocks to use the full width */
+  }
+
+  .services-title {
+    font-size: 1.5em; /* Adjust title size for smaller screens */
+  }
+
+  .services-section h3 {
+    font-size: 1.5em; /* Adjust heading size for smaller screens */
+  }
+
+  .services-section p {
+    font-size: 1em; /* Adjust paragraph size for smaller screens */
+  }
+  .credentials {
+    flex-direction: column;
+  }
+
+  .credential-item {
+    flex-basis: 100%; /* Stack items on smaller screens */
+    margin-bottom: 20px;
+  }
+
+  .about-content {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center-align the items for a balanced look */
+    text-align: center; /* Center text for consistency */
+  }
+
+  .about-image {
+    max-width: 80%; /* Increase max-width for better use of space */
+    margin-right: 0; /* Remove the margin-right as it's no longer side-by-side */
+    margin-bottom: 20px; /* Add space between the image and the text */
+  }
+
+  .about-text {
+    max-width: 90%; /* Adjust max-width for the text block */
+  }
+
+  .about-us h2, .about-text h3 {
+    text-align: center; /* Center-align headings for consistency */
+  }
+
+  .about-text p {
+    text-align: justify;
+  }
+  .footer-content {
+    flex-direction: column; /* Stack elements vertically */
+  }
+  .social-media-links a {
+    font-size: 1.2em; /* Adjust icon size for smaller screens */
+  }
+}
+
+/* Keyframes for animations of hero section*/
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleInSmooth {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
